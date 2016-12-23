@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {View, Text, TextInput, TouchableHighlight, Image} from 'react-native'
+import {View, Text, TextInput, TouchableHighlight, TouchableOpacity, Image} from 'react-native'
 // import {observer} from 'mobx-react/native';
 import styles from './styles';
 import EntryInput from '../EntryInput/EntryInput';
@@ -10,6 +10,8 @@ export default class App extends Component {
   }
 
   render() {
+    console.log('this.props.navigator --> ', this.props.navigator);
+
     return (
       <Image
         style={styles.container}
@@ -19,11 +21,18 @@ export default class App extends Component {
                     secureTextEntry={false}/>
         <EntryInput placeholder="Password" secureTextEntry={true}/>
 
-        <View style={styles.entryButton}>
+        <TouchableOpacity style={styles.entryButton} onPress={this.navigationTest.bind(this)}>
           <Text style={styles.entryButtonText}>Login</Text>
-        </View>
+        </TouchableOpacity>
 
       </Image>
     )
+  }
+
+  navigationTest() {
+    console.log('nav test');
+    this.props.navigator.push({
+      component: 'TestComponent'
+    })
   }
 }

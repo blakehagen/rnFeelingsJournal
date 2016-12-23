@@ -16,7 +16,7 @@ const styles = React.StyleSheet.create({
   title: {
     fontSize: 32,
     marginTop: 100,
-    marginBottom: -8,
+    marginBottom: -4,
     // fontFamily: 'AppleSDGothicNeo-UltraLight',
     fontFamily: 'AppleSDGothicNeo-Thin',
     color: '#45AB7F'
